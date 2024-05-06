@@ -16,20 +16,22 @@ public class Main {
         while(true) {
             loop:
             while(choice != 7) {
-                System.out.println("\n1. Create new account");
-                System.out.println("2. Perform operations in an existing account");
-                System.out.println("3. Delete an existing account");
-                System.out.println("4. Display the average of all account balances");
-                System.out.println("5. Display the maximum and minimum account balances");
-                System.out.println("6. Display all accounts that have low balance");
-                System.out.println("7. Quit");
-                System.out.print("Enter your choice: ");
+                System.out.println("""
+                        1.Create a new account
+                        2. Perform operations in an existing account
+                        3. Delete an account
+                        4. Display average balance of all accounts
+                        5. Display max and min balance of accounts
+                        6. Display accounts with a lower balance than the entered value
+                        7. Quit
+                        Enter one of the above""");
                 choice = scanner.nextInt();
                 switch (choice) {
                     case 1:
-                        System.out.println("\n1. Checking account");
-                        System.out.println("2. Savings account");
-                        System.out.print("Enter your choice: ");
+                        System.out.println("""
+                                1.Checking Account
+                                2. Savings Account
+                                Enter one of the above""");
                         int accountType = scanner.nextInt();
                         scanner.nextLine();
 
@@ -79,12 +81,14 @@ public class Main {
 
                         if (accountType == 1) {
                             CheckingAccount account =
-                                    new CheckingAccount(accountNumber, date, balance, withdrawLimit, 0.0, person, "checking");
+                                    new CheckingAccount(accountNumber, date, balance, withdrawLimit,
+                                            0.0, person, "checking");
                             bank.addAccount(account);
                             System.out.println("Checking account created successfully.");
                         } else if (accountType == 2) {
                             SavingsAccount account =
-                                    new SavingsAccount(accountNumber, date, balance, withdrawLimit, 0.0, person, "savings");
+                                    new SavingsAccount(accountNumber, date, balance, withdrawLimit,
+                                            0.0, person, "savings");
                             bank.addAccount(account);
                             System.out.println("Savings account created successfully.");
                         } else {
@@ -101,17 +105,16 @@ public class Main {
                             break;
                         } else {
                             int operation = 0;
-
                             while(true) {
                                 if (operation == 4) {
                                     continue loop;
                                 }
-
-                                System.out.println("Select operation");
-                                System.out.println("1. Deposit");
-                                System.out.println("2. Withdraw");
-                                System.out.println("3. Get account info");
-                                System.out.println("4. Back");
+                                System.out.println("""
+                                        Select one of the options given below
+                                        1. Deposit
+                                        2. Withdraw
+                                        3. Account Information
+                                        4. Quit""");
                                 operation = scanner.nextInt();
                                 scanner.nextLine();
                                 double amount;

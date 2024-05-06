@@ -110,6 +110,21 @@ public class Account<Bank> {
         text = text + this.currentBalance + " " + this.withdrawLimit + " " + this.withdrawAmount + "\n";
         text = text + "End\n";
         return text;
+
+        /*
+         String mainText = "";
+        String text = "Account Number: ";
+        String text1 = "\nAccount Type: ";
+        String text2 = "\nName: ";
+        String text3 = "\nDate Created: ";
+        String text4 = "\nBalance: ";
+        String text5 = "\nWithdraw Limit: ";
+        String text6 = "\nWithdraw Amount: ";
+        mainText = mainText + text + this.accountNumber + text1 + this.accountType + text2 +
+                this.accountHolder.getName() + text3 + this.dateCreated + text4 +
+                this.currentBalance + text5 + this.withdrawLimit + text6 + this.withdrawAmount + "\n";
+                mainText = mainText + "\n";
+         */
     }
 
     public void loadFromText(String text) {

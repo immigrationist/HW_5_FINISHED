@@ -119,14 +119,16 @@ public class Bank {
                 Person person = new Person("", 'm', 20, "123 main st", "123-456-7890");
                 if (accountType.equals("checking")) {
                     CheckingAccount account =
-                            new CheckingAccount("", "", 0.0, 0.0, 0.0, person, "checking");
+                            new CheckingAccount("", "", 0.0,
+                                    0.0, 0.0, person, "checking");
                     account.loadFromText(accountInfo);
                     account.getAccountHolder().setName(account.getAccountHolderName());
                     this.accounts.add(account);
                     accountInfo = "";
                 } else {
                     SavingsAccount account =
-                            new SavingsAccount("", "", 0.0, 0.0, 0.0, person, "savings");
+                            new SavingsAccount("", "", 0.0,
+                                    0.0, 0.0, person, "savings");
                     account.loadFromText(accountInfo);
                     account.getAccountHolder().setName(account.getAccountHolderName());
                     this.accounts.add(account);
